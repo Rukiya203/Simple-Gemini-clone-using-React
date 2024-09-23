@@ -1,0 +1,68 @@
+.main-div {
+  height: 96.4vh;
+  /* background-color: blueviolet; */
+ 
+  display: flex;
+  flex-direction: column;
+ 
+ 
+}
+
+.response-con {
+  
+  /* background-color: aqua; */
+  flex-grow: 1;
+  position: relative;
+ 
+  
+ 
+  
+  
+
+  /* scrollbar-color: red; */
+  
+  overflow-y: auto; /* Allows scrolling when the list grows */
+}
+
+#list2{
+ 
+  
+  margin-left: 21vw;
+  width: 50vw;
+  padding: 10px;
+  word-wrap: nowrap;
+  color: green;
+  
+ 
+}
+.input-div {
+ 
+  background-color: blue; 
+  
+ 
+  width: 92vw;
+  margin-left: -2vw;
+  bottom:0 ;
+ 
+  
+ 
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lolo {
+  margin-left: 0vw;
+}
+
+.input-text {
+  
+  padding: 20px;
+  /* background-color: aqua; */
+  
+}
+
+.pic{
+  background-color: red;
+}
