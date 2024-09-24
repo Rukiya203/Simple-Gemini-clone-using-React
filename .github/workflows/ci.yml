@@ -1,0 +1,35 @@
+name: React App CI
+
+on:
+  push:
+    branches: [ "main" ]   # Runs the workflow on pushes to the "main" branch
+  pull_request:
+    branches: [ "main" ]   # Runs the workflow on pull requests targeting the "main" branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest   # Use the latest version of Ubuntu as the build environment
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2   # Checkout the code from the repository
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2   # Set up the Node.js environment
+      with:
+        node-version: '18.16.1'   # Specify the version of Node.js, typically 16 or 18 for React apps
+
+    - name: Install dependencies
+      run: npm install   # Install project dependencies
+
+    - name: Run tests
+      run: npm test -- --watchAll=false   # Run tests in the React app (using Jest or any configured test runner)
+
+    - name: Build the app
+      run: npm run build   # Build the React app for production
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2   # Upload the build artifacts (optional)
+      with:
+        name: build
+        path: build/
